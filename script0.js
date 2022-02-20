@@ -11,7 +11,7 @@ document.getElementById("searchSubmit").addEventListener("click", function(event
 	const url = "https://serpapi.com/search.json?engine=google_scholar&q=" + value + "&api_key=" + APIKEY;
 	console.log(url);
 	fetch(url)
-		mode:	'no-cors'
+		
 		.then(function(response) {
 			return response.json();
 		}).then(function(json) {
