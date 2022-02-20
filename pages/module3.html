@@ -63,63 +63,59 @@
 
 
 			<div class="main">
-				<div class="modules">
 					<div class="menu">
-						<h1>Training Modules</h1>
+						<h1>Training Module 1: Scientific Literature</h1>
 						<br />
 						<br />
 						<br />
 					</div>
 
 
+          <p><strong>
+            One of the key tenets of biology is that structure and function of
+            biological molecules are intimately related.
+          </strong>
+          </p>
 
-					<div class="grid_container">
-						<div class="module_box">
-							<p><a href="/pages/module1.html">Module 1</a></p>
-						</div>
+          <p>
+          When investigating biological molecules, it is very important
+            to get an idea of their structure. </p>
 
-						<div class="module_box">
-							<p><a href="/pages/module2.html">Module 2</a></p>
-						</div>
-						<div class="module_box">
-							<p><a href="/pages/module3.html">Module 3</a></p>
-						</div>
-						<div class="module_box">
-							<p><a href="/pages/module4.html">Module 4</a></p>
-						</div>
-						<div class="module_box">
-							<p><a href="/pages/module5.html">Module 5</a></p>
-						</div>
-						<div class="module_box">
-							<p>Module 6</p>
-						</div>
-						<div class="module_box">
-							<p>Module 7</p>
-						</div>
-						<div class="module_box">
-							<p>Module 8</p>
-						</div>
-						<div class="module_box">
-							<p>Module 9</p>
-						</div>
-						<div class="module_box">
-							<p>Module 10</p>
-						</div>
-						<div class="module_box">
-							<p>Module 11</p>
-						</div>
-						<div class="module_box">
-							<p>Module 12</p>
-						</div>
-						<div class="module_box">
-							<p>Module 13</p>
-						</div>
-						<div class="module_box">
-							<p>Module 14</p>
-						</div>
-					</div>
+          <p>
+          The most common format for storing structural information about
+          biological molecules is the PDB file, which stands for Protein Data
+          Bank format.  Structures of biological molecules that have been
+          determined using experimental techniques such as x-ray crystallography or
+          NMR.  Each structure has a unique 4-digit code assigned to it.</p>
 
-				</div>
+          <p>
+           The worldwide protein data bank database at https://www.rcsb.org/
+           is a valuable resource that contains structural information for
+           over 185,000 biological molecules.
+          </p>
+
+
+          <p> <strong> <em>
+          Use the search box below to view important information about any pdb
+          entry. (If you don't know where to start, try a few of the
+          following pdb codes: 4M7T, 1EDE, 3VNK, 1ALK, 1N68, 1A4L, 5XH3, 4WFI,
+          etc. )
+          </em> </strong> </p>
+
+
+
+           <form>
+             <label>Enter a pdb code search term</label>
+             <input id="searchInput" type="text"></input><br/>
+             <input id="searchSubmit" type="submit" value="Submit"></input>
+           </form>
+
+
+          <div>
+       			<div id="searchResults"></div>
+       		</div>
+
+
 
 
 
@@ -139,6 +135,8 @@
 
 
     </div>
+
+   <script text="type/javascript" src="/script.js"></script>
 
 
 
