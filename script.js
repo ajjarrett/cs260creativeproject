@@ -30,30 +30,39 @@ document.getElementById("searchSubmit").addEventListener("click", function(event
 				results += '<p><strong>Name: </strong>' + json.response.docs[i].q_bound_enzyme_name + "</p>";
 				results += '<p><strong>Biomolecule class: </strong>' + json.response.docs[i].all_assembly_composition + "</p>";
 				results += '<p><strong>Experimental method: </strong>' + json.response.docs[i].q_experimental_method + "</p>";
-				results += '<p><strong>Quaternary structure: </strong>' json.response.docs[i].all_assembly_form + json.response.docs[i].all_assembly_type + "</p>";
-				results += '<p><strong>Enzyme superfamily: </strong>' + json.response.docs[i].assembly_type + "</p>";
+				results += '<p><strong>Quaternary structure: </strong>' + json.response.docs[i].all_assembly_form + ' ' + json.response.docs[i].all_assembly_type + "</p>";
+				results += '<p><strong>Enzyme superfamily: </strong> ';
 				for (let j=0; j < json.response.docs[i].cath_homologous_superfamily.length; j++) {
-					results += '<p>'+ json.response.docs[i].cath_homologous_superfamily[j] +'</li>';
+					results += ' '+ json.response.docs[i].cath_homologous_superfamily[j] + ' ';
 				}
+				results += '</p> ';
 
 				results += '<p><strong>Ligands included in structure: </strong></p>'
-				if (json.response.docs[i].q_bound_compound_id.length){
+				if (json.response.docs[i].q_bound_compound_id.length > 0){
+						results += '<div class="bulletsNextTo">';
 						results += '<ul>';
 				}
+
 				for (let j=0; j < json.response.docs[i].q_bound_compound_id.length; j++) {
 					results += '<li>'+ json.response.docs[i].q_bound_compound_id[j] +'</li>';
 				}
-				if (json.response.docs[i].q_bound_compound_id.length){
+
+				if (json.response.docs[i].q_bound_compound_id.length > 0){
 						results += '</ul>';
+						results += '</div>';
 				}
 
 				results += '<p><strong>Structure Citation doi: </strong>' + json.response.docs[i].citation_doi + "</p>";
 
 
 
-
 			}
 
+			document.getElementById("searchResults").innerHTML = results;
+
+		});
+
+});
 
 
 
@@ -66,9 +75,3 @@ document.getElementById("searchSubmit").addEventListener("click", function(event
 			//results += '<p>Sugars included: ' + json.number_of_entities.sugar +'</p>';
 			//results += '<p>Water included: ' + json.number_of_entities.water +'</p>';
 			//results += '<p>Quaternary structure: ' + json.assemblies.name +'</p>';
-
-			document.getElementById("searchResults").innerHTML = results;
-
-		});
-
-});
